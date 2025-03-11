@@ -1,0 +1,19 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "name": "Jonas Petraitis",
+        "email": "jonas.petraitis@example.com",
+        "address": "Vilnius, Lietuva"
+      }
+    ],
+    "products": [
+      {
+        "id": 1,
+        "title": "Vintažinė suknelė",
+        "description": "Graži suknelė iš 60-ųjų.",
+        "price": 75
+      }
+    ]
+  }
+  
