@@ -47,56 +47,64 @@
         "title": "Vintage Dress",
         "description": "Beautiful 1960s dress, perfect for parties.",
         "price": 75,
-        "categoryId": 1
+        "categoryId": 1,
+        "image": "/images/vintage-dress.jpg"
       },
       {
         "id": 2,
         "title": "Classic Watches",
         "description": "A collection of old watches, great for collectors.",
         "price": 150,
-        "categoryId": 2
+        "categoryId": 2,
+        "image": "/images/vintage-classic-watch.jpg"
       },
       {
         "id": 3,
         "title": "Rare Perfume Set",
         "description": "Exclusive 1980s perfumes for special occasions.",
         "price": 90,
-        "categoryId": 3
+        "categoryId": 3,
+        "image": "/images/vintage-perfume-set.jpg"
       },
       {
         "id": 4,
         "title": "Leather-Accented Shoes",
         "description": "Stylish shoes with leather accents inspired by retro fashion.",
         "price": 120,
-        "categoryId": 4
+        "categoryId": 4,
+        "image": "/images/vintage-leather-shoes.jpg"
       },
       {
         "id": 5,
         "title": "Vintage Blouse",
         "description": "Cozy blouse perfect for autumn outfits.",
         "price": 60,
-        "categoryId": 1
+        "categoryId": 1,
+        "image": "/images/vintage-blouse.jpg"
       },
       {
         "id": 6,
         "title": "Fashionable Sunglasses",
         "description": "Trendy sunglasses to complete any vintage look.",
         "price": 45,
-        "categoryId": 2
+        "categoryId": 2,
+        "image": "/images/vintage-sunglasses.jpg"
       },
       {
         "id": 7,
         "title": "Unique Perfume Bottle",
         "description": "A rare 1970s perfume bottle, great for collectors.",
         "price": 110,
-        "categoryId": 3
+        "categoryId": 3,
+        "image": "/images/vintage-perfume-bottle.jpg"
       },
       {
         "id": 8,
         "title": "Retro Shoes",
         "description": "1950s-inspired shoes with a unique design.",
         "price": 130,
-        "categoryId": 4
+        "categoryId": 4,
+        "image": "/images/vintage-retro-shoes.jpg"
       }
     ],
     "orders": [
