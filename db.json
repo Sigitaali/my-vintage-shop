@@ -210,6 +210,13 @@
       "userId": 1,
       "rating": 4,
       "comment": "I like"
+    },
+    {
+      "id": "5d74",
+      "productId": "7",
+      "userId": 1,
+      "rating": 3,
+      "comment": "Not my smell."
     }
   ]
 }

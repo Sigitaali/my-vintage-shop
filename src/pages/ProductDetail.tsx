@@ -1,4 +1,4 @@
-import React, { useEffect, useState, FormEvent } from 'react';
+import React, { useEffect, useState, FormEvent, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import '../styles/ProductDetail.scss';
@@ -11,6 +11,7 @@ import {
   updateReview, 
   deleteReview 
 } from '../services/api';
+import { CartContext } from '../context/CartContext';
 
 
 const ProductDetail: React.FC = () => {
@@ -19,13 +20,12 @@ const ProductDetail: React.FC = () => {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>('');
-
   const [newRating, setNewRating] = useState<number>(5);
   const [newComment, setNewComment] = useState<string>('');
-
   const [editingReviewId, setEditingReviewId] = useState<number | null>(null);
   const [editRating, setEditRating] = useState<number>(5);
   const [editComment, setEditComment] = useState<string>('');
+  const { dispatch } = useContext(CartContext);
 
   useEffect(() => {
     const fetchData = async () => {

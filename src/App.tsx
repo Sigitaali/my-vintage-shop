@@ -6,6 +6,7 @@ import Shoes from './pages/Shoes';
 import Accessories from './pages/Accessories';
 import Perfume from './pages/Perfume';
 import ProductDetail from './pages/ProductDetail';
+import Cart from './pages/Cart';
 
 const App: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const App: React.FC = () => {
         <Route path="/accessories" element={<Accessories />} />
         <Route path="/perfume" element={<Perfume />} />
         <Route path="/products/:id" element={<ProductDetail />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </Router>
   );
