@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { fetchProductsByCategory, Product } from '../services/api';
 import '../styles/Category.scss';
@@ -30,15 +31,17 @@ const Shoes: React.FC = () => {
         <h1>Vintage Shoes</h1>
         <div className="product-list">
           {products.map((product) => (
-            <div key={product.id} className="product-card">
-              <img
-                src={product.image || '/images/default-product.jpg'}
-                alt={product.title}
-              />
-              <h2>{product.title}</h2>
-              <p>{product.description}</p>
-              <p>${product.price}</p>
-            </div>
+            <Link key={product.id} to={`/products/${product.id}`}>
+              <div className="product-card">
+                <img
+                  src={product.image || '/images/default-product.jpg'}
+                  alt={product.title}
+                />
+                <h2>{product.title}</h2>
+                <p>{product.description}</p>
+                <p>${product.price}</p>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
