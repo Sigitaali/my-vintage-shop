@@ -30,11 +30,12 @@ const ProductDetail: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const productData = await getProductById(id!);
-        setProduct(productData);
-        const reviewData = await getReviewsByProduct(id!);
-        setReviews(reviewData);
-      } catch (err: any) {
+        const productResponse = await getProductById(id!);
+        setProduct(productResponse);
+        const reviewsResponse = await getReviewsByProduct(id!);
+        setReviews(reviewsResponse);
+      } catch (err: unknown) {
+        console.error(err);
         setError('Error fetching product data.');
       } finally {
         setLoading(false);
@@ -46,7 +47,7 @@ const ProductDetail: React.FC = () => {
   const handleNewReviewSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!product) return;
-    const review: Review = {
+    const newReview: Review = {
       productId: product.id,
       userId: 1,
       rating: newRating,
@@ -55,20 +56,23 @@ const ProductDetail: React.FC = () => {
 
 
     try {
-      const newRev = await postReview(review);
+      const newRev = await postReview(newReview);
       setReviews([...reviews, newRev]);
       setNewRating(5);
       setNewComment('');
-    } catch (err: any) {
+    } catch (err: unknown) {
+      console.error(err);
       alert('Error submitting review.');
     }
   };
+
 
   const handleDeleteReview = async (reviewId: number) => {
     try {
       await deleteReview(reviewId);
       setReviews(reviews.filter((r) => r.id !== reviewId));
-    } catch (err: any) {
+    } catch (err: unknown) {
+      console.error(err);
       alert('Error deleting review.');
     }
   };
@@ -92,7 +96,8 @@ const ProductDetail: React.FC = () => {
       const result = await updateReview(editingReviewId, updatedReview);
       setReviews(reviews.map((r) => (r.id === editingReviewId ? result : r)));
       setEditingReviewId(null);
-    } catch (err: any) {
+    } catch (err: unknown) {
+      console.error(err);
       alert('Error updating review.');
     }
   };
