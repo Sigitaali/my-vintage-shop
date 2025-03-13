@@ -50,7 +50,15 @@ const ProductDetail: React.FC = () => {
 
   const handleAddToCart = () => {
     if (product) {
-      dispatch({ type: 'ADD_ITEM', payload: { productId: product.id, quantity: 1 } });
+      dispatch({
+        type: 'ADD_ITEM',
+        payload: { 
+          productId: product.id, 
+          quantity: 1, 
+          title: product.title, 
+          price: product.price 
+        },
+      });
       alert('Product added to cart!');
     }
   };
