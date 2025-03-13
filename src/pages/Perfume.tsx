@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
-import { fetchProductsByCategory, Product } from '../services/api';
+import { getProductsByCategory, Product } from '../services/api';
 import { CartContext } from '../context/CartContext';
 import { addToCart } from '../utils/cartUtils';
 import '../styles/Category.scss';
@@ -13,7 +13,7 @@ const Perfume: React.FC = () => {
   const { dispatch } = useContext(CartContext);
 
   useEffect(() => {
-    fetchProductsByCategory(3)
+    getProductsByCategory(3)
       .then((data) => {
         setProducts(data);
         setLoading(false);

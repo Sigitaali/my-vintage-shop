@@ -11,6 +11,7 @@ const Navbar: React.FC = () => {
       <Link to="/shoes">Shoes</Link>
       <Link to="/accessories">Accessories</Link>
       <Link to="/perfume">Perfume</Link>
+      <Link to="/forum">Vintage Forum</Link>
       <Link className="cart-link" to="/cart">
         <img src="/images/cart-icon.png" alt="Cart Icon" className="cart-icon" />
         Cart

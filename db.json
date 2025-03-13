@@ -177,46 +177,90 @@
       "comment": "These sunglasses are so stylish!"
     },
     {
-      "id": "0d06",
+      "id": "4",
       "productId": 1,
       "userId": 1,
       "rating": 3,
       "comment": "Very beautiful!"
     },
     {
-      "id": "d552",
+      "id": "5",
       "productId": 5,
       "userId": 1,
       "rating": 5,
       "comment": "I like it."
     },
     {
-      "id": "06e5",
+      "id": "6",
       "productId": 2,
       "userId": 1,
       "rating": 5,
-      "comment": "Very beautiful"
+      "comment": "Very beautiful."
     },
     {
-      "id": "01e3",
+      "id": "7",
       "productId": 4,
       "userId": 1,
       "rating": 5,
-      "comment": "Old, classic lovely shoes"
+      "comment": "Old, classic lovely shoes."
     },
     {
-      "id": "c0a0",
+      "id": "8",
       "productId": 8,
       "userId": 1,
       "rating": 4,
-      "comment": "I like"
+      "comment": "I like them."
     },
     {
-      "id": "5d74",
+      "id": "9",
       "productId": 7,
       "userId": 1,
       "rating": 3,
       "comment": "Not my smell."
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "Welcome to Vintage Forum!",
+      "content": "Let's share our passion for vintage items here.",
+      "userId": 1,
+      "date": "2025-04-01"
+    },
+    {
+      "id": 2,
+      "title": "Vintage fashion tips",
+      "content": "Share your best vintage styling tips.",
+      "userId": 2,
+      "date": "2025-04-03"
+    },
+    {
+      "id": 3,
+      "title": "Gucci 1987",
+      "content": "I bought a Gucci dress from 1987—amazing quality and style! I looked like a star.",
+      "userId": 3,
+      "date": "2025-04-05"
+    },
+    {
+      "id": 4,
+      "title": "Authentic 60s Jacket",
+      "content": "Just scored an authentic 1960s jacket. Perfect for a vintage look!",
+      "userId": 1,
+      "date": "2025-04-06"
+    },
+    {
+      "id": 5,
+      "title": "Retro Sunglasses",
+      "content": "My new pair of vintage sunglasses add the perfect retro vibe to my outfits.",
+      "userId": 2,
+      "date": "2025-04-07"
+    },
+    {
+      "id": 6,
+      "title": "Gucci Handbag",
+      "content": "I purchased a rare Gucci handbag from 1987 – absolutely stunning and unique!",
+      "userId": 3,
+      "date": "2025-04-08"
     }
   ]
 }

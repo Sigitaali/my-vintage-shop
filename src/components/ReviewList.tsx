@@ -3,11 +3,11 @@ import { Review } from '../services/api';
 
 interface ReviewListProps {
   reviews: Review[];
-  editingReviewId: number | null;
+  editingReviewId: string | null;
   editRating: number;
   editComment: string;
   onEdit: (review: Review) => void;
-  onDelete: (reviewId: number) => void;
+  onDelete: (reviewId: string) => void;
   onUpdate: (e: FormEvent) => void;
   onCancelEdit: () => void;
   onEditRatingChange: (value: number) => void;
@@ -69,7 +69,9 @@ const ReviewList: React.FC<ReviewListProps> = ({
                 </div>
                 <p>{review.comment}</p>
                 <button onClick={() => onEdit(review)}>Edit</button>
-                <button onClick={() => onDelete(review.id!)}>Delete</button>
+                <button onClick={() => onDelete(review.id!)}>
+                  Delete
+                </button>
               </>
             )}
           </div>

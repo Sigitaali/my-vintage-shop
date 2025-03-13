@@ -7,7 +7,6 @@ const Home: React.FC = () => {
   return (
     <div className="home-container">
       <Navbar />
-
       <h1>Welcome to Our Vintage Shop</h1>
       <p className="home-subtitle">Find timeless pieces from different eras</p>
 
@@ -39,10 +38,16 @@ const Home: React.FC = () => {
             <h2>Vintage Perfume</h2>
           </Link>
         </div>
+
+        <div className="category-card">
+          <Link to="/forum">
+            <img src="/images/forum-icon.jpg" alt="Vintage Forum" />
+            <h2>Vintage Forum</h2>
+          </Link>
+        </div>
       </div>
     </div>
   );
 };
 
 export default Home;
-

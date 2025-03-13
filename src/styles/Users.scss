@@ -1,0 +1,30 @@
+.users-container {
+    padding: 2rem;
+    text-align: center;
+  
+    .users-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+  
+      li {
+        margin: 0.5rem 0;
+      }
+    }
+  
+    .new-user-link {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #ffb6c1;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+  
+      &:hover {
+        background-color: #f2a0ac;
+      }
+    }
+  }
+  

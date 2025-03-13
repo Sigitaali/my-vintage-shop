@@ -2,7 +2,6 @@ import axios from 'axios';
 
 const API_URL = 'http://localhost:3000';
 
-
 export interface Product {
   id: number;
   title: string;
@@ -13,29 +12,32 @@ export interface Product {
 }
 
 export interface Review {
-  id?: number;
+  id?: string;
   productId: number;
   userId: number;
   rating: number;
   comment: string;
 }
 
-export const fetchProducts = async (): Promise<Product[]> => {
-  const response = await axios.get(`${API_URL}/products`);
-  return response.data;
-};
+export interface User {
+  id: number;
+  name: string;
+  email: string;
+  address: string;
+}
 
-export const fetchProductsByCategory = async (
-  categoryId: number
-): Promise<Product[]> => {
-  const response = await axios.get(
-    `${API_URL}/products?categoryId=${categoryId}`
-  );
+export const getProducts = async (): Promise<Product[]> => {
+  const response = await axios.get(`${API_URL}/products`);
   return response.data;
 };
 
 export const getProductById = async (id: number | string): Promise<Product> => {
   const response = await axios.get(`${API_URL}/products/${id}`);
+  return response.data;
+};
+
+export const getProductsByCategory = async (categoryId: number): Promise<Product[]> => {
+  const response = await axios.get(`${API_URL}/products?categoryId=${categoryId}`);
   return response.data;
 };
 
@@ -49,13 +51,35 @@ export const postReview = async (review: Review): Promise<Review> => {
   return response.data;
 };
 
-export const updateReview = async (reviewId: number | string, review: Review): Promise<Review> => {
-  const response = await axios.put(`${API_URL}/reviews/${reviewId}`, review);
+export const updateReview = async (id: number | string, review: Review): Promise<Review> => {
+  const response = await axios.patch(`${API_URL}/reviews/${id}`, review);
   return response.data;
 };
 
-export const deleteReview = async (reviewId: number | string): Promise<void> => {
-  await axios.delete(`${API_URL}/reviews/${reviewId}`);
+export const deleteReview = async (id: number | string): Promise<void> => {
+  await axios.delete(`${API_URL}/reviews/${id}`);
 };
 
+export const getUsers = async (): Promise<User[]> => {
+  const response = await axios.get(`${API_URL}/users`);
+  return response.data;
+};
 
+export const getUserById = async (id: number | string): Promise<User> => {
+  const response = await axios.get(`${API_URL}/users/${id}`);
+  return response.data;
+};
+
+export const createUser = async (user: Omit<User, 'id'>): Promise<User> => {
+  const response = await axios.post(`${API_URL}/users`, user);
+  return response.data;
+};
+
+export const updateUser = async (id: number | string, user: Partial<User>): Promise<User> => {
+  const response = await axios.patch(`${API_URL}/users/${id}`, user);
+  return response.data;
+};
+
+export const deleteUser = async (id: number | string): Promise<void> => {
+  await axios.delete(`${API_URL}/users/${id}`);
+};
