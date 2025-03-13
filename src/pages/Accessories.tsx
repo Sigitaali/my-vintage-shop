@@ -1,13 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { fetchProductsByCategory, Product } from '../services/api';
+import { CartContext } from '../context/CartContext';
+import { addToCart } from '../utils/cartUtils';
 import '../styles/Category.scss';
 
 const Accessories: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>('');
+  const { dispatch } = useContext(CartContext);
 
   useEffect(() => {
     fetchProductsByCategory(2)
@@ -31,8 +34,8 @@ const Accessories: React.FC = () => {
         <h1>Vintage Accessories</h1>
         <div className="product-list">
           {products.map((product) => (
-            <Link key={product.id} to={`/products/${product.id}`}>
-              <div className="product-card">
+            <div key={product.id} className="product-card">
+              <Link to={`/products/${product.id}`}>
                 <img
                   src={product.image || '/images/default-product.jpg'}
                   alt={product.title}
@@ -40,8 +43,11 @@ const Accessories: React.FC = () => {
                 <h2>{product.title}</h2>
                 <p>{product.description}</p>
                 <p>${product.price}</p>
-              </div>
-            </Link>
+              </Link>
+              <button onClick={(e) => addToCart(dispatch, product, e)}>
+                Add to Cart
+              </button>
+            </div>
           ))}
         </div>
       </div>

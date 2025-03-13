@@ -12,7 +12,8 @@ import {
   deleteReview 
 } from '../services/api';
 import { CartContext } from '../context/CartContext';
-
+import ReviewList from '../components/ReviewList';
+import ReviewForm from '../components/ReviewForm';
 
 const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -20,20 +21,23 @@ const ProductDetail: React.FC = () => {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>('');
+  
   const [newRating, setNewRating] = useState<number>(5);
   const [newComment, setNewComment] = useState<string>('');
+  
   const [editingReviewId, setEditingReviewId] = useState<number | null>(null);
   const [editRating, setEditRating] = useState<number>(5);
   const [editComment, setEditComment] = useState<string>('');
+  
   const { dispatch } = useContext(CartContext);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const productResponse = await getProductById(id!);
-        setProduct(productResponse);
-        const reviewsResponse = await getReviewsByProduct(id!);
-        setReviews(reviewsResponse);
+        const productData = await getProductById(id!);
+        setProduct(productData);
+        const reviewData = await getReviewsByProduct(id!);
+        setReviews(reviewData);
       } catch (err: unknown) {
         console.error(err);
         setError('Error fetching product data.');
@@ -43,6 +47,13 @@ const ProductDetail: React.FC = () => {
     };
     fetchData();
   }, [id]);
+
+  const handleAddToCart = () => {
+    if (product) {
+      dispatch({ type: 'ADD_ITEM', payload: { productId: product.id, quantity: 1 } });
+      alert('Product added to cart!');
+    }
+  };
 
   const handleNewReviewSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -54,7 +65,6 @@ const ProductDetail: React.FC = () => {
       comment: newComment,
     };
 
-
     try {
       const newRev = await postReview(newReview);
       setReviews([...reviews, newRev]);
@@ -65,7 +75,6 @@ const ProductDetail: React.FC = () => {
       alert('Error submitting review.');
     }
   };
-
 
   const handleDeleteReview = async (reviewId: number) => {
     try {
@@ -118,84 +127,31 @@ const ProductDetail: React.FC = () => {
           <h1>{product.title}</h1>
           <p>{product.description}</p>
           <p className="price">Price: ${product.price}</p>
+          <button onClick={handleAddToCart}>Add to Cart</button>
         </div>
       </div>
 
       <div className="reviews-section">
         <h2>Reviews</h2>
-        {reviews.length === 0 ? (
-          <p>No reviews yet.</p>
-        ) : (
-          reviews.map((review) => (
-            <div key={review.id} className="review-card">
-              {editingReviewId === review.id ? (
-                <form onSubmit={handleUpdateReview} className="edit-review-form">
-                  <label>
-                    Rating:
-                    <select
-                      value={editRating}
-                      onChange={(e) => setEditRating(Number(e.target.value))}
-                    >
-                      <option value={5}>5 - Excellent</option>
-                      <option value={4}>4 - Good</option>
-                      <option value={3}>3 - Average</option>
-                      <option value={2}>2 - Poor</option>
-                      <option value={1}>1 - Terrible</option>
-                    </select>
-                  </label>
-                  <label>
-                    Comment:
-                    <textarea
-                      value={editComment}
-                      onChange={(e) => setEditComment(e.target.value)}
-                      required
-                    />
-                  </label>
-                  <button type="submit">Update</button>
-                  <button type="button" onClick={() => setEditingReviewId(null)}>
-                    Cancel
-                  </button>
-                </form>
-              ) : (
-                <>
-                  <div className="review-rating">
-                    {'★'.repeat(review.rating)}
-                    {'☆'.repeat(5 - review.rating)}
-                  </div>
-                  <p>{review.comment}</p>
-                  <button onClick={() => handleEditReview(review)}>Edit</button>
-                  <button onClick={() => handleDeleteReview(review.id!)}>Delete</button>
-                </>
-              )}
-            </div>
-          ))
-        )}
-
-        <form onSubmit={handleNewReviewSubmit} className="review-form">
-          <h3>Leave a Review</h3>
-          <label>
-            Rating:
-            <select
-              value={newRating}
-              onChange={(e) => setNewRating(Number(e.target.value))}
-            >
-              <option value={5}>5 - Excellent</option>
-              <option value={4}>4 - Good</option>
-              <option value={3}>3 - Average</option>
-              <option value={2}>2 - Poor</option>
-              <option value={1}>1 - Terrible</option>
-            </select>
-          </label>
-          <label>
-            Comment:
-            <textarea
-              value={newComment}
-              onChange={(e) => setNewComment(e.target.value)}
-              required
-            />
-          </label>
-          <button type="submit">Submit Review</button>
-        </form>
+        <ReviewList
+          reviews={reviews}
+          editingReviewId={editingReviewId}
+          editRating={editRating}
+          editComment={editComment}
+          onEdit={handleEditReview}
+          onDelete={handleDeleteReview}
+          onUpdate={handleUpdateReview}
+          onCancelEdit={() => setEditingReviewId(null)}
+          onEditRatingChange={setEditRating}
+          onEditCommentChange={setEditComment}
+        />
+        <ReviewForm
+          newRating={newRating}
+          newComment={newComment}
+          onRatingChange={setNewRating}
+          onCommentChange={setNewComment}
+          onSubmit={handleNewReviewSubmit}
+        />
       </div>
     </div>
   );
