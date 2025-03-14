@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
 import { getPosts, Post } from '../services/forumApi';
 import '../styles/Forum.scss';
 
@@ -29,7 +28,6 @@ const Forum: React.FC = () => {
 
   return (
     <div className="forum-container">
-      <Navbar />
       <h1>Vintage Forum</h1>
       <Link className="new-post-link" to="/forum/new">
         Create New Post

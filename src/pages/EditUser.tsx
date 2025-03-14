@@ -1,6 +1,5 @@
 import React, { useState, useEffect, FormEvent } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
 import { getUserById, updateUser } from '../services/api';
 import '../styles/EditUser.scss';
 
@@ -46,7 +45,6 @@ const EditUser: React.FC = () => {
 
   return (
     <div className="edit-user-container">
-      <Navbar />
       <h1>Edit User</h1>
       <form onSubmit={handleSubmit}>
         <label>

@@ -1,6 +1,5 @@
 import React, { useEffect, useState, FormEvent, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
 import '../styles/ProductDetail.scss';
 import { 
   Product, 
@@ -115,7 +114,6 @@ const ProductDetail: React.FC = () => {
 
   return (
     <div className="product-detail-container">
-      <Navbar />
       <div className="product-info">
         <img
           src={product.image ? product.image : '/images/default-product.jpg'}

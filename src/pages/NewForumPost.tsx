@@ -1,6 +1,5 @@
 import React, { useState, FormEvent, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
 import NewForumPostForm from '../components/NewForumPostForm';
 import { createPost, Post } from '../services/forumApi';
 import { getUsers, createUser, User } from '../services/api';
@@ -68,7 +67,6 @@ const NewForumPost: React.FC = () => {
 
   return (
     <div className="new-forum-post-container">
-      <Navbar />
       <h1>Create New Post</h1>
       <div className="user-selection">
         <label>

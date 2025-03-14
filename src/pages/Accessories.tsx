@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
 import { getProductsByCategory, Product } from '../services/api';
 import { CartContext } from '../context/CartContext';
 import { addToCart } from '../utils/cartUtils';
@@ -29,7 +28,6 @@ const Accessories: React.FC = () => {
 
   return (
     <div>
-      <Navbar />
       <div className="category-container">
         <h1>Vintage Accessories</h1>
         <div className="product-list">

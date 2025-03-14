@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
 import { getUserById, User } from '../services/api';
 import '../styles/UserDetail.scss';
 
@@ -31,7 +30,6 @@ const UserDetail: React.FC = () => {
 
   return (
     <div className="user-detail-container">
-      <Navbar />
       <h1>{user.name}</h1>
       <p><strong>Email:</strong> {user.email}</p>
       <p><strong>Address:</strong> {user.address}</p>

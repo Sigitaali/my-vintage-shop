@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
 import { getUsers, User } from '../services/api';
 import '../styles/Users.scss';
 
@@ -29,7 +28,6 @@ const Users: React.FC = () => {
 
   return (
     <div className="users-container">
-      <Navbar />
       <h1>Users</h1>
       <ul className="users-list">
         {users.map((user) => (

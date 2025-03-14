@@ -1,6 +1,5 @@
 import React, { useState, FormEvent } from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
 import { searchPosts, Post } from '../services/forumApi';
 import '../styles/SearchPosts.scss';
 
@@ -26,7 +25,6 @@ const SearchPosts: React.FC = () => {
 
   return (
     <div className="search-posts-container">
-      <Navbar />
       <h1>Search Posts</h1>
       <form onSubmit={handleSearch}>
         <input

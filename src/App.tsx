@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Clothes from './pages/Clothes';
 import Shoes from './pages/Shoes';
@@ -10,18 +11,20 @@ import Cart from './pages/Cart';
 import UsersList from './pages/UsersList';
 import UserProfile from './pages/UserProfile';
 import Register from './pages/Register';
-import Login from './pages/Login';    
+import Login from './pages/Login';
 import UserOrders from './pages/UserOrders';
 import Forum from './pages/Forum';
 import ForumPostDetail from './pages/ForumPostDetail';
 import NewForumPost from './pages/NewForumPost';
 import GlobalSearch from './pages/GlobalSearch';
 import ProductReviews from "./pages/ProductReviews";
+import SearchPosts from './pages/SearchPosts';
 
 
 const App: React.FC = () => {
   return (
     <Router>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/clothes" element={<Clothes />} />
@@ -40,7 +43,7 @@ const App: React.FC = () => {
         <Route path="/forum/:id" element={<ForumPostDetail />} />
         <Route path="/global-search" element={<GlobalSearch />} />
         <Route path="/products/:id/reviews" element={<ProductReviews />} />
-
+        <Route path="/search-posts" element={<SearchPosts />} />
       </Routes>
     </Router>
   );

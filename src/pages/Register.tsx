@@ -1,6 +1,5 @@
 import React, { useState, FormEvent } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
 import { createUser, User } from '../services/api';
 import '../styles/Register.scss';
 
@@ -25,7 +24,6 @@ const Register: React.FC = () => {
 
   return (
     <div className="register-container">
-      <Navbar />
       <h1>Register</h1>
       <form onSubmit={handleRegister} className="register-form">
         <label>

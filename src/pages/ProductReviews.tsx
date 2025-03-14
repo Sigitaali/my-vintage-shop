@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
 import { getReviewsByProduct, Review } from '../services/api';
 import '../styles/ProductReviews.scss';
 
@@ -30,7 +29,6 @@ const ProductReviews: React.FC = () => {
 
   return (
     <div className="product-reviews-container">
-      <Navbar />
       <h1>Product Reviews</h1>
       {reviews.length === 0 ? (
         <p>No reviews for this product.</p>

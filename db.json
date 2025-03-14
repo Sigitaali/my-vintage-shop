@@ -23,6 +23,12 @@
       "email": "sigita@gmail.com",
       "address": "Klaipeda, Lithuania",
       "id": "Qtbb-T6"
+    },
+    {
+      "name": "Nerile",
+      "email": "nerile@gmail.com",
+      "address": "Klaipeda, Lithuania",
+      "id": "KP5FDvo"
     }
   ],
   "categories": [
@@ -223,6 +229,13 @@
       "userId": "1",
       "rating": 3,
       "comment": "Not my smell."
+    },
+    {
+      "productId": "2",
+      "userId": 1,
+      "rating": 4,
+      "comment": "You need in this store golden watches.",
+      "id": "CDvDK4H"
     }
   ],
   "posts": [
@@ -274,6 +287,13 @@
       "userId": "Qtbb-T6",
       "date": "2025-03-14",
       "id": "eiaVURL"
+    },
+    {
+      "title": "Very good page.",
+      "content": "I bought sunglasses and GUCCI shoes. Perfect! ",
+      "userId": "KP5FDvo",
+      "date": "2025-03-14",
+      "id": "C43kehs"
     }
   ]
 }
