@@ -1,0 +1,44 @@
+.product-reviews-container {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #f9f9f9;
+  
+    h1 {
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      color: #333;
+    }
+  
+    .review-card {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      text-align: left;
+      background-color: #fff;
+      
+      p {
+        margin: 0.5rem 0;
+      }
+      
+      .review-rating {
+        font-size: 1.2rem;
+        color: #ffb400;
+        margin-bottom: 0.5rem;
+      }
+    }
+  
+    a {
+      text-decoration: none;
+      color: #ff69b4;
+      font-weight: bold;
+      transition: color 0.2s;
+  
+      &:hover {
+        color: #ff4081;
+      }
+    }
+  }
+  
