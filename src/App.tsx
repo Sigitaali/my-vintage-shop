@@ -7,14 +7,17 @@ import Accessories from './pages/Accessories';
 import Perfume from './pages/Perfume';
 import ProductDetail from './pages/ProductDetail';
 import Cart from './pages/Cart';
-import Users from './pages/Users';
-import UserDetail from './pages/UserDetail';
-import NewUser from './pages/NewUser';
-import EditUser from './pages/EditUser';
-import DeleteUser from './pages/DeleteUser';
+import UsersList from './pages/UsersList';
+import UserProfile from './pages/UserProfile';
+import Register from './pages/Register';
+import Login from './pages/Login';    
+import UserOrders from './pages/UserOrders';
 import Forum from './pages/Forum';
 import ForumPostDetail from './pages/ForumPostDetail';
 import NewForumPost from './pages/NewForumPost';
+import GlobalSearch from './pages/GlobalSearch';
+import ProductReviews from "./pages/ProductReviews";
+
 
 const App: React.FC = () => {
   return (
@@ -27,14 +30,17 @@ const App: React.FC = () => {
         <Route path="/perfume" element={<Perfume />} />
         <Route path="/products/:id" element={<ProductDetail />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/users" element={<Users />} />
-        <Route path="/users/new" element={<NewUser />} />
-        <Route path="/users/:id" element={<UserDetail />} />
-        <Route path="/users/:id/edit" element={<EditUser />} />
-        <Route path="/users/:id/delete" element={<DeleteUser />} />
+        <Route path="/users" element={<UsersList />} />
+        <Route path="/profile/:id" element={<UserProfile />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/users/:id/orders" element={<UserOrders />} />
         <Route path="/forum" element={<Forum />} />
         <Route path="/forum/new" element={<NewForumPost />} />
         <Route path="/forum/:id" element={<ForumPostDetail />} />
+        <Route path="/global-search" element={<GlobalSearch />} />
+        <Route path="/products/:id/reviews" element={<ProductReviews />} />
+
       </Routes>
     </Router>
   );

@@ -36,6 +36,7 @@ const UserDetail: React.FC = () => {
       <p><strong>Email:</strong> {user.email}</p>
       <p><strong>Address:</strong> {user.address}</p>
       <div className="user-actions">
+        <Link to={`/users/${user.id}/orders`}>View Orders</Link>
         <Link to={`/users/${user.id}/edit`}>Edit User</Link>
         <Link to={`/users/${user.id}/delete`}>Delete User</Link>
       </div>

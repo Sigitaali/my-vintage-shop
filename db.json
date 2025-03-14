@@ -1,154 +1,160 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "John Smith",
       "email": "john.smith@example.com",
       "address": "New York, USA"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Emily Johnson",
       "email": "emily.johnson@example.com",
       "address": "Los Angeles, USA"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Michael Brown",
       "email": "michael.brown@example.com",
       "address": "Chicago, USA"
+    },
+    {
+      "name": "Sigita",
+      "email": "sigita@gmail.com",
+      "address": "Klaipeda, Lithuania",
+      "id": "Qtbb-T6"
     }
   ],
   "categories": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Clothing",
       "description": "Vintage clothing from different decades"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Accessories",
       "description": "Vintage accessories like scarves, hats, watches, etc."
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Perfumes",
       "description": "Rare vintage perfumes"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Shoes",
       "description": "Stylish vintage shoes from different eras"
     }
   ],
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Vintage Dress",
       "description": "Beautiful 1960s dress, perfect for parties.",
       "price": 75,
-      "categoryId": 1,
+      "categoryId": "1",
       "image": "/images/vintage-dress.jpg"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Classic Watches",
       "description": "A collection of old watches, great for collectors.",
       "price": 150,
-      "categoryId": 2,
+      "categoryId": "2",
       "image": "/images/vintage-classic-watch.jpg"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Rare Perfume Set",
       "description": "Exclusive 1980s perfumes for special occasions.",
       "price": 90,
-      "categoryId": 3,
+      "categoryId": "3",
       "image": "/images/vintage-perfume-set.jpg"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Leather-Accented Shoes",
       "description": "Stylish shoes with leather accents inspired by retro fashion.",
       "price": 120,
-      "categoryId": 4,
+      "categoryId": "4",
       "image": "/images/vintage-leather-shoes.jpg"
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "Vintage Blouse",
       "description": "Cozy blouse perfect for autumn outfits.",
       "price": 60,
-      "categoryId": 1,
+      "categoryId": "1",
       "image": "/images/vintage-blouse.jpg"
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "Fashionable Sunglasses",
       "description": "Trendy sunglasses to complete any vintage look.",
       "price": 45,
-      "categoryId": 2,
+      "categoryId": "2",
       "image": "/images/vintage-sunglasses.jpg"
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "Unique Perfume Bottle",
       "description": "A rare 1970s perfume bottle, great for collectors.",
       "price": 110,
-      "categoryId": 3,
+      "categoryId": "3",
       "image": "/images/vintage-perfume-bottle.jpg"
     },
     {
-      "id": 8,
+      "id": "8",
       "title": "Retro Shoes",
       "description": "1950s-inspired shoes with a unique design.",
       "price": 130,
-      "categoryId": 4,
+      "categoryId": "4",
       "image": "/images/vintage-retro-shoes.jpg"
     }
   ],
   "orders": [
     {
-      "id": 1,
-      "userId": 1,
+      "id": "1",
+      "userId": "1",
       "date": "2025-02-15",
       "items": [
         {
-          "productId": 1,
+          "productId": "1",
           "quantity": 1
         },
         {
-          "productId": 6,
+          "productId": "6",
           "quantity": 2
         }
       ]
     },
     {
-      "id": 2,
-      "userId": 2,
+      "id": "2",
+      "userId": "2",
       "date": "2025-03-01",
       "items": [
         {
-          "productId": 3,
+          "productId": "3",
           "quantity": 1
         },
         {
-          "productId": 5,
+          "productId": "5",
           "quantity": 1
         }
       ]
     },
     {
-      "id": 3,
-      "userId": 3,
+      "id": "3",
+      "userId": "3",
       "date": "2025-03-05",
       "items": [
         {
-          "productId": 4,
+          "productId": "4",
           "quantity": 1
         },
         {
-          "productId": 7,
+          "productId": "7",
           "quantity": 1
         }
       ]
@@ -157,110 +163,117 @@
   "reviews": [
     {
       "id": "1",
-      "productId": 1,
-      "userId": 2,
+      "productId": "1",
+      "userId": "2",
       "rating": 5,
       "comment": "Fantastic vintage dress, love it!"
     },
     {
       "id": "2",
-      "productId": 3,
-      "userId": 1,
+      "productId": "3",
+      "userId": "1",
       "rating": 4,
       "comment": "Very unique scent, but a bit strong for me."
     },
     {
       "id": "3",
-      "productId": 6,
-      "userId": 3,
+      "productId": "6",
+      "userId": "3",
       "rating": 5,
       "comment": "These sunglasses are so stylish!"
     },
     {
       "id": "4",
-      "productId": 1,
-      "userId": 1,
+      "productId": "1",
+      "userId": "1",
       "rating": 3,
       "comment": "Very beautiful!"
     },
     {
       "id": "5",
-      "productId": 5,
-      "userId": 1,
+      "productId": "5",
+      "userId": "1",
       "rating": 5,
       "comment": "I like it."
     },
     {
       "id": "6",
-      "productId": 2,
-      "userId": 1,
+      "productId": "2",
+      "userId": "1",
       "rating": 5,
       "comment": "Very beautiful."
     },
     {
       "id": "7",
-      "productId": 4,
-      "userId": 1,
+      "productId": "4",
+      "userId": "1",
       "rating": 5,
       "comment": "Old, classic lovely shoes."
     },
     {
       "id": "8",
-      "productId": 8,
-      "userId": 1,
+      "productId": "8",
+      "userId": "1",
       "rating": 4,
       "comment": "I like them."
     },
     {
       "id": "9",
-      "productId": 7,
-      "userId": 1,
+      "productId": "7",
+      "userId": "1",
       "rating": 3,
       "comment": "Not my smell."
     }
   ],
   "posts": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Welcome to Vintage Forum!",
       "content": "Let's share our passion for vintage items here.",
-      "userId": 1,
+      "userId": "1",
       "date": "2025-04-01"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Vintage fashion tips",
       "content": "Share your best vintage styling tips.",
-      "userId": 2,
+      "userId": "2",
       "date": "2025-04-03"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Gucci 1987",
       "content": "I bought a Gucci dress from 1987—amazing quality and style! I looked like a star.",
-      "userId": 3,
+      "userId": "3",
       "date": "2025-04-05"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Authentic 60s Jacket",
       "content": "Just scored an authentic 1960s jacket. Perfect for a vintage look!",
-      "userId": 1,
+      "userId": "1",
       "date": "2025-04-06"
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "Retro Sunglasses",
       "content": "My new pair of vintage sunglasses add the perfect retro vibe to my outfits.",
-      "userId": 2,
+      "userId": "2",
       "date": "2025-04-07"
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "Gucci Handbag",
       "content": "I purchased a rare Gucci handbag from 1987 – absolutely stunning and unique!",
-      "userId": 3,
+      "userId": "3",
       "date": "2025-04-08"
+    },
+    {
+      "title": "Lovely shop",
+      "content": "I want to thank the store for this beauty. I am fan!",
+      "userId": "Qtbb-T6",
+      "date": "2025-03-14",
+      "id": "eiaVURL"
     }
   ]
 }

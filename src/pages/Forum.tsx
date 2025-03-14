@@ -31,13 +31,16 @@ const Forum: React.FC = () => {
     <div className="forum-container">
       <Navbar />
       <h1>Vintage Forum</h1>
-      <Link className="new-post-link" to="/forum/new">Create New Post</Link>
+      <Link className="new-post-link" to="/forum/new">
+        Create New Post
+      </Link>
       <ul className="posts-list">
         {posts.map((post) => (
           <li key={post.id}>
             <Link to={`/forum/${post.id}`}>
               <h2>{post.title}</h2>
               <p>Posted on: {post.date}</p>
+              {post.user && <p>Author: {post.user.name}</p>}
             </Link>
           </li>
         ))}

@@ -105,4 +105,22 @@
       }
     }
   }
+
+  .view-reviews-link-container {
+    margin-top: 1rem;
+  }
+  
+  .view-reviews-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #ffb6c1;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  
+    &:hover {
+      background-color: #f2a0ac;
+    }
+  }
   

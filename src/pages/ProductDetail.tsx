@@ -1,5 +1,5 @@
 import React, { useEffect, useState, FormEvent, useContext } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import '../styles/ProductDetail.scss';
 import { 
@@ -126,6 +126,11 @@ const ProductDetail: React.FC = () => {
           <p>{product.description}</p>
           <p className="price">Price: ${product.price}</p>
           <button onClick={handleAddToCart}>Add to Cart</button>
+          <div className="view-reviews-link-container">
+            <Link to={`/products/${product.id}/reviews`} className="view-reviews-btn">
+              View Reviews
+            </Link>
+          </div>
         </div>
       </div>
 

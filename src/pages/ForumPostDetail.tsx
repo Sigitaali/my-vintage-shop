@@ -82,13 +82,25 @@ const ForumPostDetail: React.FC = () => {
             />
           </label>
           <button type="submit">Update Post</button>
-          <button type="button" onClick={() => setIsEditing(false)}>Cancel</button>
+          <button type="button" onClick={() => setIsEditing(false)}>
+            Cancel
+          </button>
         </form>
       ) : (
         <div className="post-details">
           <h1>{post.title}</h1>
           <p>{post.content}</p>
           <p>Posted on: {post.date}</p>
+          {post.user ? (
+            <div className="post-author">
+              <h3>Author Information</h3>
+              <p>Name: {post.user.name}</p>
+              <p>Email: {post.user.email}</p>
+              <p>Address: {post.user.address}</p>
+            </div>
+          ) : (
+            <p>Author information not available.</p>
+          )}
           <div className="post-actions">
             <button onClick={() => setIsEditing(true)}>Edit Post</button>
             <button onClick={handleDelete}>Delete Post</button>
