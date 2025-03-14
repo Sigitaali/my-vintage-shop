@@ -1,6 +1,5 @@
 import React, { useState, FormEvent } from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
 import { searchPosts, Post } from '../services/forumApi';
 import '../styles/GlobalSearch.scss';
 
@@ -26,7 +25,6 @@ const GlobalSearch: React.FC = () => {
 
   return (
     <div className="global-search-container">
-      <Navbar />
       <h1>Global Search</h1>
       <form onSubmit={handleSearch}>
         <input

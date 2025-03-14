@@ -1,6 +1,5 @@
 import React, { useEffect, useState, FormEvent } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import Navbar from '../components/Navbar';
 import { getPostById, updatePost, deletePost, Post } from '../services/forumApi';
 import '../styles/ForumPostDetail.scss';
 
@@ -61,7 +60,6 @@ const ForumPostDetail: React.FC = () => {
 
   return (
     <div className="forum-post-detail-container">
-      <Navbar />
       {isEditing ? (
         <form onSubmit={handleUpdate} className="edit-post-form">
           <label>

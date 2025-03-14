@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
 import { getOrdersByUser, Order } from '../services/api';
 import '../styles/UserOrders.scss';
 
@@ -30,7 +29,6 @@ const UserOrders: React.FC = () => {
 
   return (
     <div className="user-orders-container">
-      <Navbar />
       <h1>User Orders</h1>
       {orders.length === 0 ? (
         <p>No orders found for this user.</p>

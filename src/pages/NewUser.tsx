@@ -1,6 +1,5 @@
 import React, { useState, FormEvent } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
 import NewUserForm from '../components/NewUserForm';
 import { createUser, User } from '../services/api';
 import '../styles/NewUser.scss';
@@ -26,7 +25,6 @@ const NewUser: React.FC = () => {
 
   return (
     <div className="new-user-container">
-      <Navbar />
       <h1>Register</h1>
       <NewUserForm
         name={name}

@@ -1,15 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
 import '../styles/Home.scss';
+import BootstrapCard from '../components/BootstrapCard';
 
 const Home: React.FC = () => {
   return (
     <div className="home-container">
-      <Navbar />
-      <h1>Welcome to Our Vintage Shop</h1>
-      <p className="home-subtitle">Find timeless pieces from different eras</p>
-
+      <BootstrapCard />
       <div className="categories">
         <div className="category-card">
           <Link to="/clothes">

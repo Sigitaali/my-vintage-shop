@@ -1,6 +1,5 @@
 import React, { useEffect, useState, FormEvent } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
 import { getUserById, updateUser, User } from '../services/api';
 import '../styles/UserProfile.scss';
 
@@ -50,7 +49,6 @@ const UserProfile: React.FC = () => {
 
   return (
     <div className="user-profile-container">
-      <Navbar />
       <h1>User Profile</h1>
       {editMode ? (
         <form onSubmit={handleUpdate} className="profile-form">

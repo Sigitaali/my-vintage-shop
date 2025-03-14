@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
 import '../styles/Login.scss';
 
 const Login: React.FC = () => {
@@ -20,7 +19,6 @@ const Login: React.FC = () => {
 
   return (
     <div className="login-container">
-      <Navbar />
       <h1>Login</h1>
       <form onSubmit={handleLogin} className="login-form">
         <label>

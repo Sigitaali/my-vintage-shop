@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import Navbar from '../components/Navbar';
 import { CartContext } from '../context/CartContext';
 import '../styles/Cart.scss';
 
@@ -17,7 +16,6 @@ const Cart: React.FC = () => {
 
   return (
     <div className="cart-container">
-      <Navbar />
       <h1>Your Cart</h1>
       {state.items.length === 0 ? (
         <p>Your cart is empty.</p>

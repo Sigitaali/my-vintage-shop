@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
 import { getUserById, deleteUser, User } from '../services/api';
 import '../styles/DeleteUser.scss';
 
@@ -42,7 +41,6 @@ const DeleteUser: React.FC = () => {
 
   return (
     <div className="delete-user-container">
-      <Navbar />
       <h1>Delete User</h1>
       <p>Are you sure you want to delete {user.name}?</p>
       <button onClick={handleDelete}>Yes, Delete User</button>
